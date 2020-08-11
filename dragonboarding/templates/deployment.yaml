@@ -6,6 +6,7 @@ metadata:
   labels:
     app: {{ .Values.name }}
     version: {{ .Values.name }}
+    circle:  {{ .Values.circle }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
