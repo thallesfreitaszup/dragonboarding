@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-{{ .Values.circle }} 
+  name: {{ .Release.Name }}-{{ .Values.circleId }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Values.name }}
     version: {{ .Values.name }}
-    circle:  {{ .Values.circle }}
+    circleId:  {{ .Values.circleId }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.name }}
       version: {{ .Release.Name }}
-      circle:  {{ .Values.circle }}
+      circleId:  {{ .Values.circleId }}
   template:
     metadata:
       annotations:
@@ -21,7 +21,7 @@ spec:
       labels:
         app: {{ .Values.name }}
         version: {{ .Release.Name }}
-        circle:  {{ .Values.circle }}
+        circleId:  {{ .Values.circleId }}
     spec:
       containers:
         - name: {{ .Values.name }}
