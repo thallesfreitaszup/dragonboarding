@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-{{ .Values.circleId }}
+  name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Values.name }}
-    version: {{ .Values.name }}
+    version: {{ .Values.version }}
     circleId:  {{ .Values.circleId }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.name }}
-      version: {{ .Release.Name }}
+      version: {{ .Values.version }}
       circleId:  {{ .Values.circleId }}
   template:
     metadata:
@@ -20,7 +20,7 @@ spec:
         sidecar.istio.io/inject: '{{ .Values.sidecarIstio.enabled }}' 
       labels:
         app: {{ .Values.name }}
-        version: {{ .Release.Name }}
+        version: {{ .Values.version }}
         circleId:  {{ .Values.circleId }}
     spec:
       containers:
