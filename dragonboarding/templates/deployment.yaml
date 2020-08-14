@@ -6,14 +6,14 @@ metadata:
   labels:
     app: {{ .Values.name }}
     version: {{ .Values.version }}
-    circleId:  {{ .Values.circleId }}
+    circleId: {{ .Values.circleId }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.name }}
       version: {{ .Values.version }}
-      circleId:  {{ .Values.circleId }}
+      circleId: {{ .Values.circleId }}
   template:
     metadata:
       annotations:
@@ -21,7 +21,7 @@ spec:
       labels:
         app: {{ .Values.name }}
         version: {{ .Values.version }}
-        circleId:  {{ .Values.circleId }}
+        circleId: {{ .Values.circleId }}
     spec:
       containers:
         - name: {{ .Values.name }}
