@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}{{ randAlphaNum 8 }}
+  name: {{ .Release.Name }}{{ randAlphaNum 8 lower }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Values.name }}
