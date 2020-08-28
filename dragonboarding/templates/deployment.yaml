@@ -11,7 +11,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.name }}
+      app: {{ .Values.appname }}
       version: {{ .Release.Name }}
       circleId: {{ .Values.circleId }}
   template:
@@ -19,7 +19,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: '{{ .Values.sidecarIstio.enabled }}' 
       labels:
-        app: {{ .Values.name }}
+        app: {{ .Values.appname }}
         version: {{ .Release.Name }}
         circleId: {{ .Values.circleId }}
     spec:
