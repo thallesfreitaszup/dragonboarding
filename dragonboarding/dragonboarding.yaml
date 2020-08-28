@@ -20,3 +20,4 @@ resources:
     memory: 64Mi
 sidecarIstio:
   enabled: true
+appname: dragonboarding
