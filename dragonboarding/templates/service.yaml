@@ -4,7 +4,7 @@ metadata:
   labels:
     app: {{ .Values.name }}
     service: {{ .Values.name }}
-  name: {{ .Values.name }}
+  name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
 spec:
   ports:
