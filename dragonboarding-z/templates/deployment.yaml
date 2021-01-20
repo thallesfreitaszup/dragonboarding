@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Values.deploymentName }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Values.name }}
     version: {{ .Values.name }}
-    circle: {{ .Values.circle }}
+    circle: {{ .Chart.circleId }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
